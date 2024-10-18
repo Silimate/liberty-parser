@@ -19,6 +19,8 @@
 /* why doesn't libc have a nice hash table mechanism? */
 
 #include <stdio.h>
+#include <stdlib.h> // SILIMATE: added for free
+#include <string.h> // SILIMATE: added for strlen, strcpy
 #include <ctype.h>
 #include "libhash.h"
 #include "libstrtab.h"

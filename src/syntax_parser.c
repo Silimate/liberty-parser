@@ -245,6 +245,8 @@ typedef union YYSTYPE YYSTYPE;
 
 extern YYSTYPE syntax_parser_lval;
 
+int syntax_parser_error (char *); // SILIMATE: need to declare this function
+int syntax_parser_lex (void); // SILIMATE: need to declare this function
 int syntax_parser_parse (void);
 
 #endif /* !YY_SYNTAX_PARSER_Y_TAB_H_INCLUDED  */

@@ -30,7 +30,7 @@ struct liberty_strtable_chunk
 };
 
 typedef struct liberty_strtable_chunk liberty_strtable_chunk;
-
+typedef struct liberty_hash_table liberty_hash_table; // SILIMATE: forward declaration needed for liberty_strtable
 
 struct liberty_strtable
 {
