@@ -34,7 +34,6 @@ char *search_string_for_linefeeds(char *str);
 %}
 %option   noyywrap
 %option prefix="syntax_parser_"
-%option outfile="lex.yy.c"
 
 %x comment
 %%

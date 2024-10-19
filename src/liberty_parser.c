@@ -246,6 +246,8 @@ typedef union YYSTYPE YYSTYPE;
 
 extern YYSTYPE liberty_parser_lval;
 
+int liberty_parser_error (char *); // SILIMATE: need to declare this function
+int liberty_parser_lex (void); // SILIMATE: need to declare this function
 int liberty_parser_parse (void);
 
 #endif /* !YY_LIBERTY_PARSER_Y_TAB_H_INCLUDED  */
@@ -2297,7 +2299,7 @@ si2drValueTypeT convert_vt(char *type)
    return SI2DR_UNDEFINED_VALUETYPE;
 }
 
-yyerror(char *s)
+int yyerror(char *s) // SILIMATE: explicitly set return type to int
 {
    si2drErrorT err;
 

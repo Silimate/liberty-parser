@@ -611,7 +611,7 @@ si2drValueTypeT convert_vt(char *type)
    return SI2DR_UNDEFINED_VALUETYPE;
 }
 
-yyerror(char *s)
+int yyerror(char *s) // SILIMATE: explicitly set return type to int
 {
    si2drErrorT err;
 

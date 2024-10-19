@@ -19,6 +19,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "libstrtab.h" // SILIMATE: added for print_strtab_stats
 #include "si2dr_liberty.h"
 #include <sys/types.h>
 #include <time.h>

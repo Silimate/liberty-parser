@@ -5527,7 +5527,7 @@ static struct reference_time_vals
 	si2drGroupIdT oid[NUMENTRIES];
 } refvals;
 
-static check_retention_cell(si2drGroupIdT group)
+static int check_retention_cell(si2drGroupIdT group) // SILIMATE: explicitly set return type to int
 {
 	si2drErrorT err;
 	si2drAttrIdT retention, power_gating;

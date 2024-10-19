@@ -1,24 +1,35 @@
-liberty_parse
-libsi2dr_liberty.la
-"./so_locations"
-.libs _libs
-syntax_parse
-*.o
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
 *.lo
-*.tab.c 
-libtool
-TAGS
-ID
-GTAGS
-GRTAGS
-GSYMS
-GPATH
-tags
-config.status
-config.cache
-config.log
-configure.lineno
-config.status.lineno
-.deps
-autom4te.cache
-Makefile
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Build directory
+/build

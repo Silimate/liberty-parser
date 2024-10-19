@@ -33,22 +33,7 @@ extern liberty_hash_table *libsynt_attrs;
 void dump_group(libsynt_group_info *g, FILE *outC, FILE *outH);
 void dump_attr(libsynt_attribute_info *a, FILE *outC, FILE *outH);
 
-#if HAVE_DIRENT_H
-# include <dirent.h>
-# define NAMLEN(dirent) strlen((dirent)->d_name)
-#else
-# define dirent direct
-# define NAMLEN(dirent) (dirent)->d_namelen
-# if HAVE_SYS_NDIR_H
-#  include <sys/ndir.h>
-# endif
-# if HAVE_SYS_DIR_H
-#  include <sys/dir.h>
-# endif
-# if HAVE_NDIR_H
-#  include <ndir.h>
-# endif
-#endif
+#include <dirent.h>
 
 extern  libsynt_technology libsynt_techs[20];
 extern  int libsynt_tech_count;

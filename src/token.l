@@ -184,7 +184,6 @@ char *search_string_for_linefeeds(char *str);
 %}
 %option   noyywrap
 %option prefix="liberty_parser2_"
-%option outfile="lex.yy.c"
 %x comment
 %x stringx
 %x include
