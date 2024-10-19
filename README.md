@@ -24,25 +24,25 @@ Copyright (c) 1996-2005 Synopsys, Inc.    ALL RIGHTS RESERVED
 This package is contains various tools for working with
 liberty, a standard developed by Synopsys for describing cell libraries. 
 
-Dependencies:
+## Dependencies
 
 To build this package, you will need, as a minimum, the following
 utilities. They may be substituted with local favorites, hopefully
 with little tweaking of the makefiles or code:
 
-bison  version 1.875  (1.22 will not work; 1.28 does)  and up. Earlier versions than
+- bison  version 1.875  (1.22 will not work; 1.28 does)  and up. Earlier versions than
        1.875 will work fine, except syntax errors generate slightly different messages,
        which cause some regression tests to fail.
-flex   version 2.5.2 and up.
-gperf  version 3.0    (2.5 will not work-- some OK .lib files will not pass check)
-gcc    version 2.8.1, egcs 2.91.60, 2.95.2, or above
+- flex   version 2.5.2 and up.
+- gperf  version 3.0    (2.5 will not work-- some OK .lib files will not pass check)
+- gcc    version 2.8.1, egcs 2.91.60, 2.95.2, or above
 
 Optionally useful, perhaps required:
 
-GNU make   version 3.79.1  and up... ** non-gnu makes probably won't work! **
-diffutils  version 2.7  if your system can't handle "diff -q ..."
-sh-utils   version 2.0  if your echo can't handle the -n option...
-libtool    version 1.4.2 ;; most users will not need need this unless
+- GNU make   version 3.79.1  and up... ** non-gnu makes probably won't work! **
+- diffutils  version 2.7  if your system can't handle "diff -q ..."
+- sh-utils   version 2.0  if your echo can't handle the -n option...
+- libtool    version 1.4.2 ;; most users will not need need this unless
                             seriously wanting to change things in 
                             developer mode.
 
@@ -51,11 +51,11 @@ You can pick up GNU software from:
 (an up-to-date listing of ftp sites is at:
 	http://www.gnu.org/order/ftp.html )
 
-gatekeeper.dec.com/pub/GNU
-ftp.keystealth.org/pub/gnu
-ftp.itcentrx.com/pub/gnu
-uiarchive.cso.uiuc.edu/pub/ftp/ftp.gnu.org/gnu
-ftp.cs.columbia.edu/archives/gnu/prep
+- gatekeeper.dec.com/pub/GNU
+- ftp.keystealth.org/pub/gnu
+- ftp.itcentrx.com/pub/gnu
+- uiarchive.cso.uiuc.edu/pub/ftp/ftp.gnu.org/gnu
+- ftp.cs.columbia.edu/archives/gnu/prep
 
 
 
@@ -64,7 +64,7 @@ Other versions may be used, both older or newer. The above versions
 
 
 
-NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW
+NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW
 
 A good forum for discussions about liberty and Physical Liberty (plib) is at:
 
@@ -72,27 +72,7 @@ http://synopsys.infopop.net/OpenTopic
 
 Bugs and enhancement requests and pleas for aid can be posted there, as well as late-breaking news.
 
-NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW
-
-
-
-
-Quick Install instructions:
-
-To build with all the defaults, this simple series of commands 
-should build and install (in /usr/local/bin and /usr/local/lib):
-
-./configure
-make
-make
-make check
-make install
-
-
-For more detailed building instructions, see the INSTALL file. So far,
-this file has been compiled and linked and successfully run on Solaris
-2.5.1, Solaris 2.7, SunOS 4.1.4, HPUX 9.05, and RedHat Linux 6.0, Fedora Core 3.
-
+NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW--NEW
 
 Included in this distribution are the files PI.c and si2dr_liberty.h, an
 implementation of a procedural interface modeled after the SI2DR
@@ -137,9 +117,9 @@ be made. The rest of the checks are hand coded. Not all possible
 checks have been coded to date. It is hoped that the user community
 will help by contributing to this effort.
 
-SYNTAX/SEMANTIC CHECKS
+### Syntax/semantic checks
 
-Automatic checks:
+#### Automatic checks
 
 Using the files in desc/, these checks are performed:
 
@@ -167,7 +147,7 @@ Using the files in desc/, these checks are performed:
    names are really references; these have to be excluded from this
    check by hand, as the distinction is not made in the syntax descriptions. 
 
-Hand-coded checks:
+#### Hand-coded checks
 
 1. table checks: the index, value specs in timing groups vs. templates are made. 
    The code will indicate if the wrong number of entries are present.
@@ -194,7 +174,7 @@ Hand-coded checks:
    an error is given.
 
 
-Regression tests:
+### Regression tests
 
 Simple, small regression tests exist in the test/ subdirectory. The
 script, "runtests" is provided to run them. Each of the previously
@@ -203,53 +183,53 @@ tests, both for success and failure. They are very useful in
 demonstrating weaknesses in the code, and keeping old bugs from being
 resurrected.
 
-Files:
+### Files:
 
 Here is a list of files (with some description) that come with the distribution:
 
-PI.c                    - main file for the si2dr_liberty interface
-libhash.c               - hashing functions used all over the place
-libstrtab.c             - a string table implementation that uses libhash.
-main.c                  - the main func for liberty_parse
-mymalloc.c              - malloc front ends for error checking
-syntax_checks.c         - the semantic checks are almost all in this file
-syntform.c              - functions to generate code from the syntax description files
-liberty_parser.y        - yacc source for the liberty parser
-syntax_parser.y         - yacc source for the desc files code generator
-synttok.l               - lex source for the desc files code generator
-token.l                 - lex source for the liberty parser
-liberty_structs.h       - structures used in PI.c
-libhash.h               - definitions for the hash package
-libstrtab.h             - definitions for a string table implementation built on libhash.
-mymalloc.h              - definitions for the malloc front end
-si2dr_liberty.h         - The Official .h for the si2dr_liberty interface
-syntax.h                - definitions used in the desc files code generator
-desc/                   - this directory holds syntax description files for different techs.
-desc/syntax.cmos.desc
-desc/syntax.fpga.desc
-AUTHORS                 - a list of contributors
-COPYING.pdf             - the SYNOPSYS Open Source License Version 1.0
-ChangeLog               - a list of changes made to files
-INSTALL                 - installation instructions.
-Makefile.am             - used to build makefiles
-Makefile.in             - used to build makefiles
-NEWS                    - news about the state of the program
-README                  - useful for learning many things
-acinclude.m4            - used to make makefiles, configure scripts, etc
-aclocal.m4              - used to make makefiles, configure scripts, etc
-bnf
-configure.in            - used to make the configure script
-config.sub              - used in the configure process
-config.guess            - used in the configure process
-configure               - run this to configure and generate makefiles
-install-sh              - used in the install process
-ltconfig                - used in the configure process -- in version 1.4 & up, this is no longer necc.
-ltmain.sh               - used in the configure process
-missing                 - needed to build makefiles
-mkinstalldirs           - used in the install process
-si2dr_liberty-PI.txt    - documentation for the si2dr_liberty interface
-test/                   - this directory hold the regression tests
-test/runtests           - the script to run all the tests (also, make check)
-ylwrap                  - a wrapper to call yacc/lex/bison/flex
+- PI.c                    - main file for the si2dr_liberty interface
+- libhash.c               - hashing functions used all over the place
+- libstrtab.c             - a string table implementation that uses libhash.
+- main.c                  - the main func for liberty_parse
+- mymalloc.c              - malloc front ends for error checking
+- syntax_checks.c         - the semantic checks are almost all in this file
+- syntform.c              - functions to generate code from the syntax description files
+- liberty_parser.y        - yacc source for the liberty parser
+- syntax_parser.y         - yacc source for the desc files code generator
+- synttok.l               - lex source for the desc files code generator
+- token.l                 - lex source for the liberty parser
+- liberty_structs.h       - structures used in PI.c
+- libhash.h               - definitions for the hash package
+- libstrtab.h             - definitions for a string table implementation built on libhash.
+- mymalloc.h              - definitions for the malloc front end
+- si2dr_liberty.h         - The Official .h for the si2dr_liberty interface
+- syntax.h                - definitions used in the desc files code generator
+- desc/                   - this directory holds syntax description files for different techs.
+- desc/syntax.cmos.desc
+- desc/syntax.fpga.desc
+- AUTHORS                 - a list of contributors
+- COPYING.pdf             - the SYNOPSYS Open Source License Version 1.0
+- ChangeLog               - a list of changes made to files
+- INSTALL                 - installation instructions.
+- Makefile.am             - used to build makefiles
+- Makefile.in             - used to build makefiles
+- NEWS                    - news about the state of the program
+- README                  - useful for learning many things
+- acinclude.m4            - used to make makefiles, configure scripts, etc
+- aclocal.m4              - used to make makefiles, configure scripts, etc
+- bnf
+- configure.in            - used to make the configure script
+- config.sub              - used in the configure process
+- config.guess            - used in the configure process
+- configure               - run this to configure and generate makefiles
+- install-sh              - used in the install process
+- ltconfig                - used in the configure process -- in version 1.4 & up, this is no longer necc.
+- ltmain.sh               - used in the configure process
+- missing                 - needed to build makefiles
+- mkinstalldirs           - used in the install process
+- si2dr_liberty-PI.txt    - documentation for the si2dr_liberty interface
+- test/                   - this directory hold the regression tests
+- test/runtests           - the script to run all the tests (also, make check)
+- ylwrap                  - a wrapper to call yacc/lex/bison/flex
 
 
