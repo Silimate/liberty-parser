@@ -19,5 +19,6 @@ config.cache
 config.log
 configure.lineno
 config.status.lineno
-./.deps
+.deps
+autom4te.cache
 Makefile
