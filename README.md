@@ -16,7 +16,7 @@ make -j8
 
 The binary will be located at `build/parse_liberty`.
 
-## README for liberty_parse v 2.6
+## Copyright
 
 Copyright (c) 1996-2005 Synopsys, Inc.    ALL RIGHTS RESERVED
 
