@@ -1,6 +1,8 @@
+# Synopsys Liberty Parser
 
+## Instructions for Building
 
-README for liberty_parse v 2.6
+## README for liberty_parse v 2.6
 
 Copyright (c) 1996-2005 Synopsys, Inc.    ALL RIGHTS RESERVED
 
