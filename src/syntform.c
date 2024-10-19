@@ -16,7 +16,7 @@
 
 ******************************************************************************/
 
-// SILIMATE: added for NAMLEN
+// SILIMATE: added for cross-platform NAMLEN support
 #include <sys/types.h>
 #ifdef HAVE_DIRENT_H
 # include <dirent.h>
