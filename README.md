@@ -1,6 +1,20 @@
 # Synopsys Liberty Parser
 
-## Instructions for Building
+Please, refer to COPYING.pdf for the license.
+
+## Compilation Instructions
+
+Ensure that `cmake` and `make` are installed. Then run:
+
+```
+rm -rf build
+mkdir build
+cd build
+cmake ..
+make -j8
+```
+
+The binary will be located at `build/parse_liberty`.
 
 ## README for liberty_parse v 2.6
 
