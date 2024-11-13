@@ -36,3 +36,11 @@
 
 # Generated Makefiles (CMake)
 Makefile
+
+# Generated flex/bison sources
+src/liberty_parser.c
+src/liberty_parser.h
+src/syntax_parser.c
+src/syntax_parser.h
+src/synttok.c
+src/synttok.h
