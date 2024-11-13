@@ -25,10 +25,16 @@
 #endif
 #include "mymalloc.h"
 
-int syntax_parser_lex(void);
-int syntax_parser_error(char *);
-#define yylex syntax_parser_lex
-#define yyerror syntax_parser_error
+// SILIMATE: defines for the parser
+#define yyparse         syntax_parser_parse
+#define yylex           syntax_parser_lex
+#define yyerror         syntax_parser_error
+#define yydebug         syntax_parser_debug
+#define yynerrs         syntax_parser_nerrs
+#define yylval          syntax_parser_lval
+#define yychar          syntax_parser_char
+int yylex(void);
+int yyerror(char *);
 	
 static libsynt_group_info *gs[100];
 static int gsindex = 0;
