@@ -3,8 +3,10 @@
 ###############################################################################
 
 cmake_minimum_required(VERSION 3.5)
-project(Liberty C CXX)
-set(CMAKE_BUILD_TYPE DEBUG)
+project(Liberty2JSON C CXX)
+set(CMAKE_BUILD_TYPE RELEASE)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 ###############################################################################
 # Fetch files
@@ -13,7 +15,6 @@ set(CMAKE_BUILD_TYPE DEBUG)
 file(GLOB LIB_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c)
 list(REMOVE_ITEM LIB_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/main.c)
 list(REMOVE_ITEM LIB_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/syntform.c)
-message(${LIB_SOURCES})
 file(GLOB LIB_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h)
 
 ###############################################################################
@@ -31,11 +32,11 @@ add_flex_bison_dependency(synttok syntax_parser)
 set(FLEX_BISON_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/liberty_parser.c ${CMAKE_CURRENT_SOURCE_DIR}/src/syntax_parser.c ${CMAKE_CURRENT_SOURCE_DIR}/src/synttok.c ${CMAKE_CURRENT_SOURCE_DIR}/src/token.c)
 
 ###############################################################################
-# Executable target
+# Executable target for Liberty2JSON
 ###############################################################################
 
 # Add executable target
-add_executable(liberty ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp ${LIB_SOURCES} ${LIB_HEADERS} ${FLEX_BISON_SOURCES})
+add_executable(liberty2json ${CMAKE_CURRENT_SOURCE_DIR}/liberty2json.cpp ${LIB_SOURCES} ${LIB_HEADERS} ${FLEX_BISON_SOURCES})
 
 # Add include directories
-target_include_directories(liberty PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(liberty2json PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
