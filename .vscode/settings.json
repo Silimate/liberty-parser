@@ -2,6 +2,12 @@
   "files.associations": {
     "__config": "c",
     "libstrtab.h": "c",
-    "types.h": "c"
+    "types.h": "c",
+    "iostream": "cpp",
+    "string": "cpp",
+    "string.h": "c",
+    "syntax.h": "c",
+    "syntax_parser.h": "c",
+    "dirent.h": "c"
   }
 }
