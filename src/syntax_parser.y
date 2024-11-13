@@ -24,6 +24,11 @@
 #include <dmalloc.h>
 #endif
 #include "mymalloc.h"
+
+int syntax_parser_lex(void);
+int syntax_parser_error(char *);
+#define yylex syntax_parser_lex
+#define yyerror syntax_parser_error
 	
 static libsynt_group_info *gs[100];
 static int gsindex = 0;
@@ -32,7 +37,7 @@ static int gsindex = 0;
  liberty_hash_table *libsynt_allgroups;
  liberty_hash_table *libsynt_attrs;
 
- libsynt_technology libsynt_techs[20];
+ libsynt_technology libsynt_techs[2];
  int libsynt_tech_count = 0;
  
 void push_group(libsynt_head *h);

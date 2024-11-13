@@ -1,7 +1,7 @@
 
 %{
 /******************************************************************************
-    Copyright (c) 1996-2005 Synopsys, Inc.    ALL RIGHTS RESERVED
+	Copyright (c) 1996-2005 Synopsys, Inc.    ALL RIGHTS RESERVED
 
   The contents of this file are subject to the restrictions and limitations
   set forth in the SYNOPSYS Open Source License Version 1.0  (the "License"); 
@@ -40,6 +40,9 @@ typedef struct xnumber xnumber;
 
 #else
 #include "mymalloc.h"
+
+YYSTYPE liberty_parser_lval;
+
 char *my_strdup(char *str);
 
 char *my_strdup(char *str){ char *x = my_malloc(strlen(str)+3 /* just in case of insertions */); strcpy(x,str); return x;}

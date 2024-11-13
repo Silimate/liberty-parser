@@ -43,4 +43,4 @@ src/liberty_parser.h
 src/syntax_parser.c
 src/syntax_parser.h
 src/synttok.c
-src/synttok.h
+src/token.c

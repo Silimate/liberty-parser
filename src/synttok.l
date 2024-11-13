@@ -28,6 +28,8 @@
 #endif
 #include "mymalloc.h"
 
+YYSTYPE syntax_parser_lval;
+
 int syntax_parser_lex(void);
 int synt_lineno = 1;
 char *search_string_for_linefeeds(char *str);
@@ -88,10 +90,10 @@ list {return KW_LIST;}
 %%
 /*  \/\*.*\*\/    {printf("Line %d: Comment found: %s\n", synt_lineno, yytext);} */
 
-char *search_string_for_linefeeds(char *str)
+/* char *search_string_for_linefeeds(char *str)
 {
    char *s;
    s = str;
    while (*s){ if( *s++ == '\n' ) {synt_lineno++; if( *(s-2) != '\\' ){printf("Warning: line %d: String constant spanning input lines does not use continuation character.\n",synt_lineno);} } }
    return str;
-}
+} */

@@ -36,6 +36,8 @@ typedef struct libAttrMap { char *name; attr_enum type; } libAttrMap;
 #endif
 #include "mymalloc.h"
 
+extern int liberty_parser_parse(void);
+
 static si2drMessageHandlerT si2ErrMsg;
 
 const struct libGroupMap *

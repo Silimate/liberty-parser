@@ -33,6 +33,15 @@ rights and limitations under the License.
 #endif
 #include "mymalloc.h" /* meant to override the my_*alloc calls if dmalloc defined*/
 
+extern int liberty_parser_lex(void);
+int yyerror(char *);
+#define yylex liberty_parser_lex
+#define yyparse liberty_parser_parse
+#define make_simple liberty_parser_make_simple
+#define make_complex liberty_parser_make_complex
+#define push_group liberty_parser_push_group
+#define pop_group liberty_parser_pop_group
+
    static si2drGroupIdT gs[1000];
    static int gsindex = 0;
 
