@@ -8,6 +8,7 @@
     "string.h": "c",
     "syntax.h": "c",
     "syntax_parser.h": "c",
-    "dirent.h": "c"
+    "dirent.h": "c",
+    "group_enum.h": "c"
   }
 }
